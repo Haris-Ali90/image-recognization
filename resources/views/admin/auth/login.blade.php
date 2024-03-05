@@ -23,38 +23,35 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-37564768-1"></script>
 
 </head>
-<body id="kt_body" class="auth-bg">
-
-<noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5FS8GGP" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe>
-</noscript>
+<!--end::Head-->
+<!--begin::Body-->
+<body id="kt_body" class="bg-dark">
+<!--begin::Main-->
 <div class="d-flex flex-column flex-root">
-    <style>
-        .auth-page-bg {
-            background-image: url('{{ asset('assets/media/illustrations/sigma-1/14.png') }}');
-        }
-
-        [data-bs-theme="dark"] .auth-page-bg {
-            background-image: url('{{ asset('assets/media/illustrations/sigma-1/14-dark.png') }}');
-        }
-    </style>
+    <!--begin::Authentication - Sign-in -->
     <div
-        class="d-flex flex-column flex-column-fluid bgi-position-y-bottom position-x-center bgi-no-repeat bgi-size-contain bgi-attachment-fixed auth-page-bg">
+
+        class="d-flex flex-column flex-column-fluid bgi-position-y-bottom position-x-center bgi-no-repeat bgi-size-contain bgi-attachment-fixed"
+        style="background-image: url('{{ asset('assets/media/illustrations/sketchy-1/14-dark.png') }}')">
+        <!--begin::Content-->
         <div class="d-flex flex-center flex-column flex-column-fluid p-10 pb-lg-20">
-            <a href="" class="mb-12">
-                <img alt="Logo" src="{{ asset('assets/media/logos/logo-default.svg') }}" class="h-60px"/>
+            <!--begin::Logo-->
+            <a href="#" class="mb-12">
+                <img alt="Logo" src="{{ asset('assets/media/logos/logo-2.svg') }}" class="h-40px"/>
             </a>
+            <!--end::Logo-->
+            <!--begin::Wrapper-->
             <div class="w-lg-500px bg-body rounded shadow-sm p-10 p-lg-15 mx-auto">
+                <!--begin::Form-->
                 <div class="text-center mb-10">
-                    <h1 class="text-dark mb-3">
-                        Sign In to Seven HTML Free </h1>
-                    <div class="text-gray-400 fw-semibold fs-4">
-                        New Here?
-                        <a href="{{ route('register') }}" class="link-primary fw-bold">
-                            Create an Account
-                        </a>
-                    </div>
+                    <!--begin::Title-->
+                    <h1 class="text-dark mb-3">Sign In to Metronic</h1>
+                    <!--end::Title-->
+                    <!--begin::Link-->
+                    <div class="text-gray-400 fw-bold fs-4">New Here?
+                        <a href="{{ route('register') }}"
+                           class="link-primary fw-bolder">Create an Account</a></div>
+                    <!--end::Link-->
                 </div>
                 <form method="POST" action="{{ route('login') }}">
                     @csrf
@@ -130,25 +127,26 @@
                         Continue with Apple
                     </a>
                 </form>
+                <!--end::Form-->
             </div>
+            <!--end::Wrapper-->
         </div>
-
+        <!--end::Content-->
+        <!--begin::Footer-->
         <div class="d-flex flex-center flex-column-auto p-10">
-            <div class="d-flex align-items-center fw-semibold fs-6">
+            <!--begin::Links-->
+            <div class="d-flex align-items-center fw-bold fs-6">
                 <a href="https://keenthemes.com" class="text-muted text-hover-primary px-2">About</a>
-                <a href="https://devs.keenthemes.com" class="text-muted text-hover-primary px-2">Support</a>
-                <a href="https://keenthemes.com/products/seven-html-pro" class="text-muted text-hover-primary px-2">
-                    Upgrade To Pro
-                </a>
+                <a href="mailto:support@keenthemes.com" class="text-muted text-hover-primary px-2">Contact</a>
+                <a href="https://1.envato.market/EA4JP" class="text-muted text-hover-primary px-2">Contact Us</a>
             </div>
+            <!--end::Links-->
         </div>
+        <!--end::Footer-->
     </div>
+    <!--end::Authentication - Sign-in-->
 </div>
-
-
-{{--<script>--}}
-    {{--var hostUrl = "/seven-html-free/assets/";        </script>--}}
-
+<script>var hostUrl = "assets/";</script>
 <script src="{{ asset('assets/plugins/global/plugins.bundle.js') }}"></script>
 <script src="{{ asset('assets/js/scripts.bundle.js') }}"></script>
 <script src="{{ asset('assets/js/custom/authentication/sign-in/general.js') }}"></script>
