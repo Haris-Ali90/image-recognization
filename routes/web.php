@@ -20,3 +20,4 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('admin/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('admin.dashboard');
+Route::get('admin/folder', [App\Http\Controllers\FolderController::class, 'index'])->name('admin.folder.index');

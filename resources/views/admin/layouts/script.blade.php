@@ -5,3 +5,4 @@
 <script src="{{ asset('assets/js/custom/apps/chat/chat.js') }}"></script>
 <script src="{{ asset('assets/js/custom/modals/create-app.js') }}"></script>
 <script src="{{ asset('assets/js/custom/modals/upgrade-plan.js') }}"></script>
+<script src="{{ asset('assets/js/custom/modals/share-earn.js') }}"></script>

@@ -66,7 +66,7 @@
                     </a>
                 </div>
                 <div class="menu-item">
-                    <a class="menu-link" href="#">
+                    <a class="menu-link" href="{{ route('admin.folder.index') }}">
 										<span class="menu-icon">
 											<!--begin::Svg Icon | path: icons/duotune/art/art002.svg-->
 											<span class="svg-icon svg-icon-2">
