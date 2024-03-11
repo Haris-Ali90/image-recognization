@@ -4,8 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Folder;
 use Illuminate\Http\Request;
-use function Symfony\Component\String\slice;
-use function Symfony\Component\String\Slugger\slug;
+use Illuminate\Support\Str;
 
 class FolderController extends Controller
 {
@@ -26,14 +25,17 @@ class FolderController extends Controller
      */
     public function index()
     {
-        return view('admin.folder.index');
+        $folders = Folder::all();
+        return view('admin.folder.index', compact('folders'));
     }
 
     public function store(Request $request)
     {
+//        $slugger = new AsciiSlugger();
+//        $slug = $slugger->slug('Your String Here');
         $folder = Folder::create([
             'name' => $request->name,
-            'slug' => slug($request->name),
+            'slug' => Str::slug($request->name),
             'link' => $request->link,
             'folder_type' => 'free',
             'folder_limit' => 20,

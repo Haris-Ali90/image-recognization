@@ -226,7 +226,8 @@
                     xhr.setRequestHeader('X-CSRF-Token', csrfToken);
                 },
                 success: function (response) {
-                    // Handle the successful response
+                    // Handle the successful responseo
+                    window.location.href = '<?php echo route('admin.folder.index') ?>';
                     console.log('Form submitted successfully');
                     console.log('Server response:', response);
                 },
