@@ -23,50 +23,52 @@
         </div>
         <!--end::Toolbar-->
         <!--begin::Post-->
-        <div class="post d-flex flex-column-fluid" id="kt_post">
-            <!--begin::Container-->
-            <div id="kt_content_container" class="container-xxl">
-                <!--begin::Card-->
-                <div class="card">
-                    <!--begin::Card body-->
-                    <div class="card-body pb-0">
-                        <!--begin::Heading-->
-                        <div class="card-px text-center pt-20 pb-5">
-                            <!--begin::Title-->
-                            <h2 class="fs-2x fw-bolder mb-0">Create Start Up Folder</h2>
-                            <!--end::Title-->
-                            <!--begin::Description-->
-                            <p class="text-gray-400 fs-4 fw-bold py-7">Click on the below button to start up
-                                <br/>your folder development.</p>
-                            <!--end::Description-->
-                            <!--begin::Action-->
-                            <a href="#" class="btn btn-primary er fs-6 px-8 py-4" data-bs-toggle="modal"
-                               data-bs-target="#kt_modal_share_earn">Start Up</a>
-                            <!--end::Action-->
+
+        @if(count($folders) == 0)
+            <div class="post d-flex flex-column-fluid" id="kt_post">
+                <!--begin::Container-->
+                <div id="kt_content_container" class="container-xxl">
+                    <!--begin::Card-->
+                    <div class="card">
+                        <!--begin::Card body-->
+                        <div class="card-body pb-0">
+                            <!--begin::Heading-->
+                            <div class="card-px text-center pt-20 pb-5">
+                                <!--begin::Title-->
+                                <h2 class="fs-2x fw-bolder mb-0">Create Start Up Folder</h2>
+                                <!--end::Title-->
+                                <!--begin::Description-->
+                                <p class="text-gray-400 fs-4 fw-bold py-7">Click on the below button to start up
+                                    <br/>your folder development.</p>
+                                <!--end::Description-->
+                                <!--begin::Action-->
+                                <a href="#" class="btn btn-primary er fs-6 px-8 py-4" data-bs-toggle="modal"
+                                   data-bs-target="#kt_modal_share_earn">Start Up</a>
+                                <!--end::Action-->
+                            </div>
+                            <!--end::Heading-->
+                            <!--begin::Illustration-->
+                            <div class="text-center px-5">
+                                <img src="{{ asset('assets/media/illustrations/sketchy-1/9.png') }}" alt=""
+                                     class="mw-100 h-200px h-sm-325px"/>
+                            </div>
+                            <!--end::Illustration-->
                         </div>
-                        <!--end::Heading-->
-                        <!--begin::Illustration-->
-                        <div class="text-center px-5">
-                            <img src="{{ asset('assets/media/illustrations/sketchy-1/9.png') }}" alt=""
-                                 class="mw-100 h-200px h-sm-325px"/>
-                        </div>
-                        <!--end::Illustration-->
+                        <!--end::Card body-->
                     </div>
-                    <!--end::Card body-->
-                </div>
-                <!--end::Card-->
-                <!--begin::Modal - Share & Earn-->
-                <div class="modal fade" id="kt_modal_share_earn" tabindex="-1" aria-hidden="true">
-                    <!--begin::Modal dialog-->
-                    <div class="modal-dialog modal-dialog-centered mw-800px">
-                        <!--begin::Modal content-->
-                        <div class="modal-content">
-                            <!--begin::Modal header-->
-                            <div class="modal-header pb-0 border-0 justify-content-end">
-                                <!--begin::Close-->
-                                <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
-                                    <!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
-                                    <span class="svg-icon svg-icon-1">
+                    <!--end::Card-->
+                    <!--begin::Modal - Share & Earn-->
+                    <div class="modal fade" id="kt_modal_share_earn" tabindex="-1" aria-hidden="true">
+                        <!--begin::Modal dialog-->
+                        <div class="modal-dialog modal-dialog-centered mw-800px">
+                            <!--begin::Modal content-->
+                            <div class="modal-content">
+                                <!--begin::Modal header-->
+                                <div class="modal-header pb-0 border-0 justify-content-end">
+                                    <!--begin::Close-->
+                                    <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
+                                        <!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
+                                        <span class="svg-icon svg-icon-1">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                              viewBox="0 0 24 24" fill="none">
                                             <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1"
@@ -75,82 +77,85 @@
                                                   transform="rotate(45 7.41422 6)" fill="black"/>
                                         </svg>
                                     </span>
-                                    <!--end::Svg Icon-->
-                                </div>
-                                <!--end::Close-->
-                            </div>
-                            <!--begin::Modal header-->
-                            <!--begin::Modal body-->
-                            <div class="modal-body scroll-y pt-0 pb-15">
-                                <!--begin::Wrapper-->
-                                <div class="mw-lg-600px mx-auto">
-                                    <!--begin::Heading-->
-                                    <div class="mb-13 text-center">
-                                        <!--begin::Title-->
-                                        <h1 class="mb-3">Folder</h1>
-                                        <!--end::Title-->
-                                        <!--begin::Description-->
-                                        <div class="text-muted fw-bold fs-5">This folder is used for image uploading and
-                                            downloading etc..
-                                        </div>
-                                        <!--end::Description-->
+                                        <!--end::Svg Icon-->
                                     </div>
-                                    <!--end::Heading-->
-
-                                    <!--begin::form-->
-                                    <form id="folder-form" class="w-100 position-relative mb-3"
-                                          autocomplete="off">
-                                        <!--begin::Input group-->
-                                        <div class="mb-10">
+                                    <!--end::Close-->
+                                </div>
+                                <!--begin::Modal header-->
+                                <!--begin::Modal body-->
+                                <div class="modal-body scroll-y pt-0 pb-15">
+                                    <!--begin::Wrapper-->
+                                    <div class="mw-lg-600px mx-auto">
+                                        <!--begin::Heading-->
+                                        <div class="mb-13 text-center">
                                             <!--begin::Title-->
+                                            <h1 class="mb-3">Folder</h1>
                                             <!--end::Title-->
-                                            <div class="fv-row mb-10 fv-plugins-icon-container">
-                                                <!--begin::Label-->
+                                            <!--begin::Description-->
+                                            <div class="text-muted fw-bold fs-5">This folder is used for image uploading
+                                                and
+                                                downloading etc..
+                                            </div>
+                                            <!--end::Description-->
+                                        </div>
+                                        <!--end::Heading-->
+
+                                        <!--begin::form-->
+                                        <form id="folder-form" class="w-100 position-relative mb-3"
+                                              autocomplete="off">
+                                            <!--begin::Input group-->
+                                            <div class="mb-10">
+                                                <!--begin::Title-->
+                                                <!--end::Title-->
+                                                <div class="fv-row mb-10 fv-plugins-icon-container">
+                                                    <!--begin::Label-->
+                                                    <label class="d-flex align-items-center fs-5 fw-bold mb-2">
+                                                        <span class="required">Folder Name</span>
+                                                        <i class="fas fa-exclamation-circle ms-2 fs-7"
+                                                           data-bs-toggle="tooltip"
+                                                           title=""
+                                                           data-bs-original-title="Specify your unique app name"
+                                                           aria-label="Specify your unique app name"></i>
+                                                    </label>
+                                                    <!--end::Label-->
+                                                    <!--begin::Input-->
+                                                    <input type="text"
+                                                           class="form-control form-control-lg form-control-solid"
+                                                           name="name" placeholder="" value="">
+                                                    <!--end::Input-->
+                                                    <div class="fv-plugins-message-container invalid-feedback"></div>
+                                                </div>
+                                                <!--begin::Title-->
                                                 <label class="d-flex align-items-center fs-5 fw-bold mb-2">
-                                                    <span class="required">Folder Name</span>
+                                                    <span class="required">Shareable Link</span>
                                                     <i class="fas fa-exclamation-circle ms-2 fs-7"
                                                        data-bs-toggle="tooltip"
-                                                       title="" data-bs-original-title="Specify your unique app name"
+                                                       title="" data-bs-original-title="Its auto generated link"
                                                        aria-label="Specify your unique app name"></i>
                                                 </label>
-                                                <!--end::Label-->
-                                                <!--begin::Input-->
-                                                <input type="text"
-                                                       class="form-control form-control-lg form-control-solid"
-                                                       name="name" placeholder="" value="">
-                                                <!--end::Input-->
-                                                <div class="fv-plugins-message-container invalid-feedback"></div>
-                                            </div>
-                                            <!--begin::Title-->
-                                            <label class="d-flex align-items-center fs-5 fw-bold mb-2">
-                                                <span class="required">Shareable Link</span>
-                                                <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip"
-                                                   title="" data-bs-original-title="Its auto generated link"
-                                                   aria-label="Specify your unique app name"></i>
-                                            </label>
-                                            <div class="d-flex">
+                                                <div class="d-flex">
 
-                                                <input id="kt_share_earn_link_input" type="text"
-                                                       class="form-control form-control-solid me-3 flex-grow-1"
-                                                       name="link" readonly
-                                                       value="https://keenthemes.com/?ref=skitechnology">
-                                                <button id="kt_share_earn_link_copy_button"
-                                                        class="btn btn-light fw-bolder flex-shrink-0"
-                                                        data-clipboard-target="#kt_share_earn_link_input">Copy Link
-                                                </button>
+                                                    <input id="kt_share_earn_link_input" type="text"
+                                                           class="form-control form-control-solid me-3 flex-grow-1"
+                                                           name="link" readonly
+                                                           value="https://keenthemes.com/?ref=skitechnology">
+                                                    <button id="kt_share_earn_link_copy_button"
+                                                            class="btn btn-light fw-bolder flex-shrink-0"
+                                                            data-clipboard-target="#kt_share_earn_link_input">Copy Link
+                                                    </button>
+                                                </div>
+                                                <!--end::Title-->
                                             </div>
-                                            <!--end::Title-->
-                                        </div>
-                                        <!--end::Input group-->
-                                        <!--begin::Actions-->
-                                        <div class="d-flex flex-stack pt-10">
-                                            <!--begin::Wrapper-->
-                                            <div>
-                                                <button type="button" class="btn btn-lg btn-primary d-inline-block"
-                                                        id="myButton">dddddddd
-                                                </button>
-												<span class="indicator-label">Submit
-                                                    <!--begin::Svg Icon | path: icons/duotune/arrows/arr064.svg-->
+                                            <!--end::Input group-->
+                                            <!--begin::Actions-->
+                                            <div class="d-flex flex-stack pt-10">
+                                                <!--begin::Wrapper-->
+                                                <div>
+                                                    <button type="button" class="btn btn-lg btn-primary d-inline-block"
+                                                            id="myButton">dddddddd
+                                                    </button>
+                                                    <span class="indicator-label">Submit
+                                                        <!--begin::Svg Icon | path: icons/duotune/arrows/arr064.svg-->
 												<span class="svg-icon svg-icon-3 ms-2 me-0">
 													<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                          viewBox="0 0 24 24" fill="none">
@@ -161,14 +166,14 @@
                                                             fill="black"></path>
 													</svg>
 												</span>
-                                                    <!--end::Svg Icon--></span>
+                                                        <!--end::Svg Icon--></span>
                                                     <span class="indicator-progress">Please wait...
 												<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
-                                                </button>
-                                                <button type="button" class="btn btn-lg btn-primary d-none"
-                                                        data-kt-stepper-action="next">Continue
-                                                    <!--begin::Svg Icon | path: icons/duotune/arrows/arr064.svg-->
-                                                    <span class="svg-icon svg-icon-3 ms-1 me-0">
+                                                    </button>
+                                                    <button type="button" class="btn btn-lg btn-primary d-none"
+                                                            data-kt-stepper-action="next">Continue
+                                                        <!--begin::Svg Icon | path: icons/duotune/arrows/arr064.svg-->
+                                                        <span class="svg-icon svg-icon-3 ms-1 me-0">
 												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                      viewBox="0 0 24 24" fill="none">
 													<rect opacity="0.5" x="18" y="13" width="13" height="2" rx="1"
@@ -178,29 +183,281 @@
                                                         fill="black"></path>
 												</svg>
 											</span>
-                                                    <!--end::Svg Icon--></button>
+                                                        <!--end::Svg Icon--></button>
+                                                </div>
+                                                <!--end::Wrapper-->
                                             </div>
-                                            <!--end::Wrapper-->
-                                        </div>
-                                        <!--end::Actions-->
-                                    </form>
-                                    <!--end::form-->
+                                            <!--end::Actions-->
+                                        </form>
+                                        <!--end::form-->
 
 
+                                    </div>
+                                    <!--end::Wrapper-->
                                 </div>
-                                <!--end::Wrapper-->
+                                <!--end::Modal body-->
                             </div>
-                            <!--end::Modal body-->
+                            <!--end::Modal content-->
                         </div>
-                        <!--end::Modal content-->
+                        <!--end::Modal dialog-->
                     </div>
-                    <!--end::Modal dialog-->
+                    <!--end::Modal - Share & Earn-->
                 </div>
-                <!--end::Modal - Share & Earn-->
+                <!--end::Container-->
             </div>
-            <!--end::Container-->
-        </div>
-        <!--end::Post-->
+        @else
+            <div class="post d-flex flex-column-fluid" id="kt_post">
+                <!--begin::Container-->
+                <div id="kt_content_container" class="container-xxl">
+                    <!--begin::Toolbar-->
+                    <div class="d-flex flex-wrap flex-stack my-5">
+                        <!--begin::Heading-->
+                        <h3 class="fw-bolder my-2">Folders
+                            <span class="fs-6 text-gray-400 fw-bold ms-1">+ {{ count($folders) }} </span></h3>
+                        <!--end::Heading-->
+                        <!--begin::Controls-->
+                        <div class="d-flex my-2">
+                            <!--begin::Search-->
+                            <div class="d-flex align-items-center position-relative me-4">
+                                <!--begin::Svg Icon | path: icons/duotune/general/gen021.svg-->
+                                <span class="svg-icon svg-icon-3 position-absolute ms-3 mt-n1">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                     viewBox="0 0 24 24" fill="none">
+													<rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546"
+                                                          height="2" rx="1" transform="rotate(45 17.0365 15.1223)"
+                                                          fill="black"/>
+													<path
+                                                        d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z"
+                                                        fill="black"/>
+												</svg>
+											</span>
+                                <!--end::Svg Icon-->
+                                <input type="text" id="kt_filter_search"
+                                       class="form-control form-control-sm form-control-solid bg-body fw-bold fs-7 w-150px ps-9"
+                                       placeholder="Search"/>
+                            </div>
+                            <!--end::Search-->
+                        </div>
+                        <!--end::Controls-->
+                    </div>
+                    <!--end::Toolbar-->
+                    <!--begin::Row-->
+                    <div class="row g-6 g-xl-9 mb-6 mb-xl-9">
+                        <!--begin::Col-->
+                        <div class="col-md-6 col-lg-4 col-xl-3">
+                            <!--begin::Card-->
+                            <div class="card h-100">
+                                <!--begin::Card body-->
+                                <div class="card-body d-flex justify-content-center text-center flex-column p-8">
+                                    <!--begin::Name-->
+                                    <a href="#" class="text-gray-800 text-hover-primary d-flex flex-column">
+                                        <!--begin::Image-->
+                                        <div class="symbol symbol-60px mb-5">
+                                            <img src="assets/media/svg/files/pdf.svg" alt=""/>
+                                        </div>
+                                        <!--end::Image-->
+                                        <!--begin::Title-->
+                                        <div class="fs-5 fw-bolder mb-2">Project Reqs..</div>
+                                        <!--end::Title-->
+                                    </a>
+                                    <!--end::Name-->
+                                    <!--begin::Description-->
+                                    <div class="fs-7 fw-bold text-gray-400">3 days ago</div>
+                                    <!--end::Description-->
+                                </div>
+                                <!--end::Card body-->
+                            </div>
+                            <!--end::Card-->
+                        </div>
+                        <!--end::Col-->
+                        <!--begin::Col-->
+                        <div class="col-md-6 col-lg-4 col-xl-3">
+                            <!--begin::Card-->
+                            <div class="card h-100">
+                                <!--begin::Card body-->
+                                <div class="card-body d-flex justify-content-center text-center flex-column p-8">
+                                    <!--begin::Name-->
+                                    <a href="#" class="text-gray-800 text-hover-primary d-flex flex-column">
+                                        <!--begin::Image-->
+                                        <div class="symbol symbol-60px mb-5">
+                                            <img src="assets/media/svg/files/doc.svg" alt=""/>
+                                        </div>
+                                        <!--end::Image-->
+                                        <!--begin::Title-->
+                                        <div class="fs-5 fw-bolder mb-2">CRM App Docs..</div>
+                                        <!--end::Title-->
+                                    </a>
+                                    <!--end::Name-->
+                                    <!--begin::Description-->
+                                    <div class="fs-7 fw-bold text-gray-400">3 days ago</div>
+                                    <!--end::Description-->
+                                </div>
+                                <!--end::Card body-->
+                            </div>
+                            <!--end::Card-->
+                        </div>
+                        <!--end::Col-->
+                        <!--begin::Col-->
+                        <div class="col-md-6 col-lg-4 col-xl-3">
+                            <!--begin::Card-->
+                            <div class="card h-100">
+                                <!--begin::Card body-->
+                                <div class="card-body d-flex justify-content-center text-center flex-column p-8">
+                                    <!--begin::Name-->
+                                    <a href="#" class="text-gray-800 text-hover-primary d-flex flex-column">
+                                        <!--begin::Image-->
+                                        <div class="symbol symbol-60px mb-5">
+                                            <img src="assets/media/svg/files/css.svg" alt=""/>
+                                        </div>
+                                        <!--end::Image-->
+                                        <!--begin::Title-->
+                                        <div class="fs-5 fw-bolder mb-2">User CRUD Styles</div>
+                                        <!--end::Title-->
+                                    </a>
+                                    <!--end::Name-->
+                                    <!--begin::Description-->
+                                    <div class="fs-7 fw-bold text-gray-400">4 days ago</div>
+                                    <!--end::Description-->
+                                </div>
+                                <!--end::Card body-->
+                            </div>
+                            <!--end::Card-->
+                        </div>
+                        <!--end::Col-->
+                        <!--begin::Col-->
+                        <div class="col-md-6 col-lg-4 col-xl-3">
+                            <!--begin::Card-->
+                            <div class="card h-100">
+                                <!--begin::Card body-->
+                                <div class="card-body d-flex justify-content-center text-center flex-column p-8">
+                                    <!--begin::Name-->
+                                    <a href="#" class="text-gray-800 text-hover-primary d-flex flex-column">
+                                        <!--begin::Image-->
+                                        <div class="symbol symbol-60px mb-5">
+                                            <img src="assets/media/svg/files/ai.svg" alt=""/>
+                                        </div>
+                                        <!--end::Image-->
+                                        <!--begin::Title-->
+                                        <div class="fs-5 fw-bolder mb-2">Metronic Logo</div>
+                                        <!--end::Title-->
+                                    </a>
+                                    <!--end::Name-->
+                                    <!--begin::Description-->
+                                    <div class="fs-7 fw-bold text-gray-400">5 days ago</div>
+                                    <!--end::Description-->
+                                </div>
+                                <!--end::Card body-->
+                            </div>
+                            <!--end::Card-->
+                        </div>
+                        <!--end::Col-->
+                        <!--begin::Col-->
+                        <div class="col-md-6 col-lg-4 col-xl-3">
+                            <!--begin::Card-->
+                            <div class="card h-100">
+                                <!--begin::Card body-->
+                                <div class="card-body d-flex justify-content-center text-center flex-column p-8">
+                                    <!--begin::Name-->
+                                    <a href="#" class="text-gray-800 text-hover-primary d-flex flex-column">
+                                        <!--begin::Image-->
+                                        <div class="symbol symbol-60px mb-5">
+                                            <img src="assets/media/svg/files/sql.svg" alt=""/>
+                                        </div>
+                                        <!--end::Image-->
+                                        <!--begin::Title-->
+                                        <div class="fs-5 fw-bolder mb-2">Orders backup</div>
+                                        <!--end::Title-->
+                                    </a>
+                                    <!--end::Name-->
+                                    <!--begin::Description-->
+                                    <div class="fs-7 fw-bold text-gray-400">1 week ago</div>
+                                    <!--end::Description-->
+                                </div>
+                                <!--end::Card body-->
+                            </div>
+                            <!--end::Card-->
+                        </div>
+                        <!--end::Col-->
+                        <!--begin::Col-->
+                        <div class="col-md-6 col-lg-4 col-xl-3">
+                            <!--begin::Card-->
+                            <div class="card h-100">
+                                <!--begin::Card body-->
+                                <div class="card-body d-flex justify-content-center text-center flex-column p-8">
+                                    <!--begin::Name-->
+                                    <a href="#" class="text-gray-800 text-hover-primary d-flex flex-column">
+                                        <!--begin::Image-->
+                                        <div class="symbol symbol-60px mb-5">
+                                            <img src="assets/media/svg/files/xml.svg" alt=""/>
+                                        </div>
+                                        <!--end::Image-->
+                                        <!--begin::Title-->
+                                        <div class="fs-5 fw-bolder mb-2">UTAIR CRM API Co..</div>
+                                        <!--end::Title-->
+                                    </a>
+                                    <!--end::Name-->
+                                    <!--begin::Description-->
+                                    <div class="fs-7 fw-bold text-gray-400">2 weeks ago</div>
+                                    <!--end::Description-->
+                                </div>
+                                <!--end::Card body-->
+                            </div>
+                            <!--end::Card-->
+                        </div>
+                        <!--end::Col-->
+                        <!--begin::Col-->
+                        <div class="col-md-6 col-lg-4 col-xl-3">
+                            <!--begin::Card-->
+                            <div class="card h-100">
+                                <!--begin::Card body-->
+                                <div class="card-body d-flex justify-content-center text-center flex-column p-8">
+                                    <!--begin::Name-->
+                                    <a href="#" class="text-gray-800 text-hover-primary d-flex flex-column">
+                                        <!--begin::Image-->
+                                        <div class="symbol symbol-60px mb-5">
+                                            <img src="assets/media/svg/files/tif.svg" alt=""/>
+                                        </div>
+                                        <!--end::Image-->
+                                        <!--begin::Title-->
+                                        <div class="fs-5 fw-bolder mb-2">Tower Hill App..</div>
+                                        <!--end::Title-->
+                                    </a>
+                                    <!--end::Name-->
+                                    <!--begin::Description-->
+                                    <div class="fs-7 fw-bold text-gray-400">3 weeks ago</div>
+                                    <!--end::Description-->
+                                </div>
+                                <!--end::Card body-->
+                            </div>
+                            <!--end::Card-->
+                        </div>
+                        <!--end::Col-->
+                        <!--begin::Col-->
+                        <div class="col-md-6 col-lg-4 col-xl-3">
+                            <!--begin::Card-->
+                            <div
+                                class="card h-100 flex-center bg-light-primary border-primary border border-dashed p-8">
+                                <!--begin::Image-->
+                                <img src="assets/media/svg/files/upload.svg class=" alt=""/>
+                                <!--end::Image-->
+                                <!--begin::Link-->
+                                <a href="#" class="text-hover-primary fs-5 fw-bolder mb-2">File Upload</a>
+                                <!--end::Link-->
+                                <!--begin::Description-->
+                                <div class="fs-7 fw-bold text-gray-400">Drag and drop files here</div>
+                                <!--end::Description-->
+                            </div>
+                            <!--end::Card-->
+                        </div>
+                        <!--end::Col-->
+                    </div>
+                    <!--end:Row-->
+                </div>
+                <!--end::Container-->
+            </div>
+        @endif
+    <!--end::Post-->
+
     </div>
 
 
@@ -208,10 +465,10 @@
 @endsection
 
 @section('scripts')
-{{--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>--}}
+    {{--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>--}}
     <script>
 
-        document.getElementById('myButton').addEventListener('click', function() {
+        document.getElementById('myButton').addEventListener('click', function () {
             // Your code here
             var csrfToken = $('meta[name="csrf-token"]').attr('content');
 
@@ -222,7 +479,7 @@
                 type: 'POST',
                 url: '{{ route('admin.folder.store') }}', // Replace with your server endpoint
                 data: formData,
-                beforeSend: function(xhr) {
+                beforeSend: function (xhr) {
                     xhr.setRequestHeader('X-CSRF-Token', csrfToken);
                 },
                 success: function (response) {
@@ -238,16 +495,16 @@
             });
         });
 
-            // function FolderFormSubmit(){
-            //
-            // }
-            // Intercept the form submission
-            // $('#folder-form').submit(function (e) {
-            //     e.preventDefault(); // Prevent the default form submission
-            //
-            //     // Serialize the form data
-            //
-            // });
+        // function FolderFormSubmit(){
+        //
+        // }
+        // Intercept the form submission
+        // $('#folder-form').submit(function (e) {
+        //     e.preventDefault(); // Prevent the default form submission
+        //
+        //     // Serialize the form data
+        //
+        // });
     </script>
 
 

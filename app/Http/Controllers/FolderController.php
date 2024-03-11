@@ -27,6 +27,7 @@ class FolderController extends Controller
     {
         $folders = Folder::all();
         return view('admin.folder.index', compact('folders'));
+//        return view('admin.folder.list');
     }
 
     public function store(Request $request)
