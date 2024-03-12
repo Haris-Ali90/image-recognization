@@ -42,7 +42,7 @@
                         <div class="text-gray-400 fw-semibold fs-4">
                             Already have an account?
 
-                            <a href="" class="link-primary fw-bold">
+                            <a href="{{ route('login') }}" class="link-primary fw-bold">
                                 Sign in here
                             </a>
                         </div>
@@ -51,7 +51,7 @@
                     <!--end::Heading-->
 
                     <!--begin::Action-->
-                    <button type="button" class="btn btn-light-primary fw-bold w-100 mb-10">
+                    <button type="button" class="btn btn-primary fw-bold w-100 mb-10">
                         <img alt="Logo" src="{{ asset('assets/media/svg/brand-logos/google-icon.svg') }}"
                              class="h-20px me-3"/>
                         Sign in with Google
@@ -70,19 +70,19 @@
 
                     <div class="row mb-3">
                         <div class="col-md-6">
-                            <label for="name" class="col-md-4 col-form-label text-left">First Name</label>
-                            <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-                            @error('name')
+                            <label for="first_name" class="col-md-4 col-form-label text-left">First Name</label>
+                            <input id="first_name" type="text" class="form-control @error('first_name') is-invalid @enderror" name="first_name" value="{{ old('first_name') }}" required autocomplete="first_name" autofocus>
+                            @error('first_name')
                             <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                             @enderror
                         </div>
                         <div class="col-md-6">
-                            <label for="name" class="col-md-4 col-form-label text-left">Last Name</label>
-                            <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                            <label for="last_name" class="col-md-4 col-form-label text-left">Last Name</label>
+                            <input id="last_name" type="text" class="form-control @error('last_name') is-invalid @enderror" name="last_name" value="{{ old('last_name') }}" required autocomplete="last_name" autofocus>
 
-                            @error('name')
+                            @error('last_name')
                             <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -116,16 +116,16 @@
                         </div>
 
                     </div>
-                    <div class="d-flex align-items-center mb-3" data-kt-password-meter-control="highlight">
-                        <div class="flex-grow-1 bg-secondary bg-active-success rounded h-5px me-2"></div>
-                        <div class="flex-grow-1 bg-secondary bg-active-success rounded h-5px me-2"></div>
-                        <div class="flex-grow-1 bg-secondary bg-active-success rounded h-5px me-2"></div>
-                        <div class="flex-grow-1 bg-secondary bg-active-success rounded h-5px"></div>
-                    </div>
+{{--                    <div class="d-flex align-items-center mb-3" data-kt-password-meter-control="highlight">--}}
+{{--                        <div class="flex-grow-1 bg-secondary bg-active-success rounded h-5px me-2"></div>--}}
+{{--                        <div class="flex-grow-1 bg-secondary bg-active-success rounded h-5px me-2"></div>--}}
+{{--                        <div class="flex-grow-1 bg-secondary bg-active-success rounded h-5px me-2"></div>--}}
+{{--                        <div class="flex-grow-1 bg-secondary bg-active-success rounded h-5px"></div>--}}
+{{--                    </div>--}}
 
-                    <div class="text-muted">
-                        Use 8 or more characters with a mix of letters, numbers & symbols.
-                    </div>
+{{--                    <div class="text-muted">--}}
+{{--                        Use 8 or more characters with a mix of letters, numbers & symbols.--}}
+{{--                    </div>--}}
 
                     <div class="row mb-3">
                         <div class="col-md-12">
@@ -134,12 +134,17 @@
                         </div>
                     </div>
 
-                    <div class="fv-row mb-10">
-                        <label class="form-check form-check-custom form-check-solid form-check-inline">
+                    <div class="fv-row mb-10 row">
+                        <label class="form-check form-check-custom form-check-solid form-check-inline col-md-6">
                             <input class="form-check-input" type="checkbox" name="toc" value="1"/>
-                            <span class="form-check-label fw-semibold text-gray-700 fs-6">
-                I Agree <a href="#" class="ms-1 link-primary">Terms and conditions</a>.
-            </span>
+                            <span class="form-check-label fw-semibold text-gray-700 fs-6">I Agree <a href="#" class="ms-1 link-primary">Terms and conditions</a>.</span>
+                        </label>
+                        <label class="form-check form-check-custom form-check-solid form-check-inline col-md-6">
+                            <input class="form-check-input" type="checkbox" name="user_type" value="1"/>
+                            <span class="form-check-label fw-semibold text-gray-700 fs-6">Individual</span>
+
+                            <input class="form-check-input photographer-input" type="checkbox" name="user_type" value="2" style="margin-left: 10px;">
+                            <span class="form-check-label fw-semibold text-gray-700 fs-6">Photographer</span>
                         </label>
                     </div>
 

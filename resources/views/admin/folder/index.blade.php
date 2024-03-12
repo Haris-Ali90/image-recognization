@@ -114,8 +114,8 @@
                                                         <i class="fas fa-exclamation-circle ms-2 fs-7"
                                                            data-bs-toggle="tooltip"
                                                            title=""
-                                                           data-bs-original-title="Specify your unique app name"
-                                                           aria-label="Specify your unique app name"></i>
+                                                           data-bs-original-title="Specify your unique folder name"
+                                                           aria-label="Specify your unique folder name"></i>
                                                     </label>
                                                     <!--end::Label-->
                                                     <!--begin::Input-->
@@ -138,9 +138,10 @@
                                                     <input id="kt_share_earn_link_input" type="text"
                                                            class="form-control form-control-solid me-3 flex-grow-1"
                                                            name="link" readonly
-                                                           value="https://keenthemes.com/?ref=skitechnology">
+                                                           value="">
                                                     <button id="kt_share_earn_link_copy_button"
                                                             class="btn btn-light fw-bolder flex-shrink-0"
+                                                            type="button"
                                                             data-clipboard-target="#kt_share_earn_link_input">Copy Link
                                                     </button>
                                                 </div>
@@ -152,38 +153,9 @@
                                                 <!--begin::Wrapper-->
                                                 <div>
                                                     <button type="button" class="btn btn-lg btn-primary d-inline-block"
-                                                            id="myButton">dddddddd
+                                                            id="myButton">Submit
                                                     </button>
-                                                    <span class="indicator-label">Submit
-                                                        <!--begin::Svg Icon | path: icons/duotune/arrows/arr064.svg-->
-												<span class="svg-icon svg-icon-3 ms-2 me-0">
-													<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                         viewBox="0 0 24 24" fill="none">
-														<rect opacity="0.5" x="18" y="13" width="13" height="2" rx="1"
-                                                              transform="rotate(-180 18 13)" fill="black"></rect>
-														<path
-                                                            d="M15.4343 12.5657L11.25 16.75C10.8358 17.1642 10.8358 17.8358 11.25 18.25C11.6642 18.6642 12.3358 18.6642 12.75 18.25L18.2929 12.7071C18.6834 12.3166 18.6834 11.6834 18.2929 11.2929L12.75 5.75C12.3358 5.33579 11.6642 5.33579 11.25 5.75C10.8358 6.16421 10.8358 6.83579 11.25 7.25L15.4343 11.4343C15.7467 11.7467 15.7467 12.2533 15.4343 12.5657Z"
-                                                            fill="black"></path>
-													</svg>
-												</span>
-                                                        <!--end::Svg Icon--></span>
-                                                    <span class="indicator-progress">Please wait...
-												<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
-                                                    </button>
-                                                    <button type="button" class="btn btn-lg btn-primary d-none"
-                                                            data-kt-stepper-action="next">Continue
-                                                        <!--begin::Svg Icon | path: icons/duotune/arrows/arr064.svg-->
-                                                        <span class="svg-icon svg-icon-3 ms-1 me-0">
-												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                     viewBox="0 0 24 24" fill="none">
-													<rect opacity="0.5" x="18" y="13" width="13" height="2" rx="1"
-                                                          transform="rotate(-180 18 13)" fill="black"></rect>
-													<path
-                                                        d="M15.4343 12.5657L11.25 16.75C10.8358 17.1642 10.8358 17.8358 11.25 18.25C11.6642 18.6642 12.3358 18.6642 12.75 18.25L18.2929 12.7071C18.6834 12.3166 18.6834 11.6834 18.2929 11.2929L12.75 5.75C12.3358 5.33579 11.6642 5.33579 11.25 5.75C10.8358 6.16421 10.8358 6.83579 11.25 7.25L15.4343 11.4343C15.7467 11.7467 15.7467 12.2533 15.4343 12.5657Z"
-                                                        fill="black"></path>
-												</svg>
-											</span>
-                                                        <!--end::Svg Icon--></button>
+
                                                 </div>
                                                 <!--end::Wrapper-->
                                             </div>
@@ -467,6 +439,15 @@
 @section('scripts')
     {{--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>--}}
     <script>
+        $(document).ready(function () {
+            // Function to generate link on keyup
+            $('input[name="name"]').on('keyup', function () {
+                var folderName = $(this).val();
+                var generatedSlug = generateSlug(folderName);
+                var generatedLink = '{{ env('APP_URL') }}/admin/folder?slug=' + generatedSlug; // Replace with your actual URL structure
+                $('#kt_share_earn_link_input').val(generatedLink);
+            });
+        });
 
         document.getElementById('myButton').addEventListener('click', function () {
             // Your code here
@@ -495,16 +476,10 @@
             });
         });
 
-        // function FolderFormSubmit(){
-        //
-        // }
-        // Intercept the form submission
-        // $('#folder-form').submit(function (e) {
-        //     e.preventDefault(); // Prevent the default form submission
-        //
-        //     // Serialize the form data
-        //
-        // });
+        function generateSlug(folderName) {
+            return folderName.toLowerCase().replace(/\s+/g, '-');
+        }
+
     </script>
 
 
