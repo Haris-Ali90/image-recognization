@@ -215,209 +215,46 @@
                     <!--end::Toolbar-->
                     <!--begin::Row-->
                     <div class="row g-6 g-xl-9 mb-6 mb-xl-9">
+                    @foreach($folders as $folder)
                         <!--begin::Col-->
-                        <div class="col-md-6 col-lg-4 col-xl-3">
-                            <!--begin::Card-->
-                            <div class="card h-100">
-                                <!--begin::Card body-->
-                                <div class="card-body d-flex justify-content-center text-center flex-column p-8">
-                                    <!--begin::Name-->
-                                    <a href="#" class="text-gray-800 text-hover-primary d-flex flex-column">
-                                        <!--begin::Image-->
-                                        <div class="symbol symbol-60px mb-5">
-                                            <img src="assets/media/svg/files/pdf.svg" alt=""/>
-                                        </div>
-                                        <!--end::Image-->
-                                        <!--begin::Title-->
-                                        <div class="fs-5 fw-bolder mb-2">Project Reqs..</div>
-                                        <!--end::Title-->
-                                    </a>
-                                    <!--end::Name-->
-                                    <!--begin::Description-->
-                                    <div class="fs-7 fw-bold text-gray-400">3 days ago</div>
-                                    <!--end::Description-->
+                            <div class="col-md-6 col-lg-4 col-xl-3">
+                                <!--begin::Card-->
+                                <div class="card h-100">
+                                    <!--begin::Card body-->
+                                    <div class="card-body d-flex justify-content-center text-center flex-column p-8">
+                                        <!--begin::Name-->
+                                        <a href="#" class="text-gray-800 text-hover-primary d-flex flex-column">
+                                            <!--begin::Image-->
+                                            <div class="symbol symbol-60px mb-5">
+                                                <img src="{{ asset('assets/media/svg/files/pdf.svg') }}" alt=""/>
+                                            </div>
+                                            <!--end::Image-->
+                                            <!--begin::Title-->
+                                            <div class="fs-5 fw-bolder mb-2">{{ $folder->name }}</div>
+                                            <!--end::Title-->
+                                        </a>
+                                        <!--end::Name-->
+                                        <!--begin::Description-->
+                                        <div class="fs-7 fw-bold text-gray-400">3 days ago</div>
+                                        <!--end::Description-->
+                                    </div>
+                                    <!--end::Card body-->
                                 </div>
-                                <!--end::Card body-->
+                                <!--end::Card-->
                             </div>
-                            <!--end::Card-->
-                        </div>
-                        <!--end::Col-->
-                        <!--begin::Col-->
-                        <div class="col-md-6 col-lg-4 col-xl-3">
-                            <!--begin::Card-->
-                            <div class="card h-100">
-                                <!--begin::Card body-->
-                                <div class="card-body d-flex justify-content-center text-center flex-column p-8">
-                                    <!--begin::Name-->
-                                    <a href="#" class="text-gray-800 text-hover-primary d-flex flex-column">
-                                        <!--begin::Image-->
-                                        <div class="symbol symbol-60px mb-5">
-                                            <img src="assets/media/svg/files/doc.svg" alt=""/>
-                                        </div>
-                                        <!--end::Image-->
-                                        <!--begin::Title-->
-                                        <div class="fs-5 fw-bolder mb-2">CRM App Docs..</div>
-                                        <!--end::Title-->
-                                    </a>
-                                    <!--end::Name-->
-                                    <!--begin::Description-->
-                                    <div class="fs-7 fw-bold text-gray-400">3 days ago</div>
-                                    <!--end::Description-->
-                                </div>
-                                <!--end::Card body-->
-                            </div>
-                            <!--end::Card-->
-                        </div>
-                        <!--end::Col-->
-                        <!--begin::Col-->
-                        <div class="col-md-6 col-lg-4 col-xl-3">
-                            <!--begin::Card-->
-                            <div class="card h-100">
-                                <!--begin::Card body-->
-                                <div class="card-body d-flex justify-content-center text-center flex-column p-8">
-                                    <!--begin::Name-->
-                                    <a href="#" class="text-gray-800 text-hover-primary d-flex flex-column">
-                                        <!--begin::Image-->
-                                        <div class="symbol symbol-60px mb-5">
-                                            <img src="assets/media/svg/files/css.svg" alt=""/>
-                                        </div>
-                                        <!--end::Image-->
-                                        <!--begin::Title-->
-                                        <div class="fs-5 fw-bolder mb-2">User CRUD Styles</div>
-                                        <!--end::Title-->
-                                    </a>
-                                    <!--end::Name-->
-                                    <!--begin::Description-->
-                                    <div class="fs-7 fw-bold text-gray-400">4 days ago</div>
-                                    <!--end::Description-->
-                                </div>
-                                <!--end::Card body-->
-                            </div>
-                            <!--end::Card-->
-                        </div>
-                        <!--end::Col-->
-                        <!--begin::Col-->
-                        <div class="col-md-6 col-lg-4 col-xl-3">
-                            <!--begin::Card-->
-                            <div class="card h-100">
-                                <!--begin::Card body-->
-                                <div class="card-body d-flex justify-content-center text-center flex-column p-8">
-                                    <!--begin::Name-->
-                                    <a href="#" class="text-gray-800 text-hover-primary d-flex flex-column">
-                                        <!--begin::Image-->
-                                        <div class="symbol symbol-60px mb-5">
-                                            <img src="assets/media/svg/files/ai.svg" alt=""/>
-                                        </div>
-                                        <!--end::Image-->
-                                        <!--begin::Title-->
-                                        <div class="fs-5 fw-bolder mb-2">Metronic Logo</div>
-                                        <!--end::Title-->
-                                    </a>
-                                    <!--end::Name-->
-                                    <!--begin::Description-->
-                                    <div class="fs-7 fw-bold text-gray-400">5 days ago</div>
-                                    <!--end::Description-->
-                                </div>
-                                <!--end::Card body-->
-                            </div>
-                            <!--end::Card-->
-                        </div>
-                        <!--end::Col-->
-                        <!--begin::Col-->
-                        <div class="col-md-6 col-lg-4 col-xl-3">
-                            <!--begin::Card-->
-                            <div class="card h-100">
-                                <!--begin::Card body-->
-                                <div class="card-body d-flex justify-content-center text-center flex-column p-8">
-                                    <!--begin::Name-->
-                                    <a href="#" class="text-gray-800 text-hover-primary d-flex flex-column">
-                                        <!--begin::Image-->
-                                        <div class="symbol symbol-60px mb-5">
-                                            <img src="assets/media/svg/files/sql.svg" alt=""/>
-                                        </div>
-                                        <!--end::Image-->
-                                        <!--begin::Title-->
-                                        <div class="fs-5 fw-bolder mb-2">Orders backup</div>
-                                        <!--end::Title-->
-                                    </a>
-                                    <!--end::Name-->
-                                    <!--begin::Description-->
-                                    <div class="fs-7 fw-bold text-gray-400">1 week ago</div>
-                                    <!--end::Description-->
-                                </div>
-                                <!--end::Card body-->
-                            </div>
-                            <!--end::Card-->
-                        </div>
-                        <!--end::Col-->
-                        <!--begin::Col-->
-                        <div class="col-md-6 col-lg-4 col-xl-3">
-                            <!--begin::Card-->
-                            <div class="card h-100">
-                                <!--begin::Card body-->
-                                <div class="card-body d-flex justify-content-center text-center flex-column p-8">
-                                    <!--begin::Name-->
-                                    <a href="#" class="text-gray-800 text-hover-primary d-flex flex-column">
-                                        <!--begin::Image-->
-                                        <div class="symbol symbol-60px mb-5">
-                                            <img src="assets/media/svg/files/xml.svg" alt=""/>
-                                        </div>
-                                        <!--end::Image-->
-                                        <!--begin::Title-->
-                                        <div class="fs-5 fw-bolder mb-2">UTAIR CRM API Co..</div>
-                                        <!--end::Title-->
-                                    </a>
-                                    <!--end::Name-->
-                                    <!--begin::Description-->
-                                    <div class="fs-7 fw-bold text-gray-400">2 weeks ago</div>
-                                    <!--end::Description-->
-                                </div>
-                                <!--end::Card body-->
-                            </div>
-                            <!--end::Card-->
-                        </div>
-                        <!--end::Col-->
-                        <!--begin::Col-->
-                        <div class="col-md-6 col-lg-4 col-xl-3">
-                            <!--begin::Card-->
-                            <div class="card h-100">
-                                <!--begin::Card body-->
-                                <div class="card-body d-flex justify-content-center text-center flex-column p-8">
-                                    <!--begin::Name-->
-                                    <a href="#" class="text-gray-800 text-hover-primary d-flex flex-column">
-                                        <!--begin::Image-->
-                                        <div class="symbol symbol-60px mb-5">
-                                            <img src="assets/media/svg/files/tif.svg" alt=""/>
-                                        </div>
-                                        <!--end::Image-->
-                                        <!--begin::Title-->
-                                        <div class="fs-5 fw-bolder mb-2">Tower Hill App..</div>
-                                        <!--end::Title-->
-                                    </a>
-                                    <!--end::Name-->
-                                    <!--begin::Description-->
-                                    <div class="fs-7 fw-bold text-gray-400">3 weeks ago</div>
-                                    <!--end::Description-->
-                                </div>
-                                <!--end::Card body-->
-                            </div>
-                            <!--end::Card-->
-                        </div>
-                        <!--end::Col-->
-                        <!--begin::Col-->
+                            <!--end::Col-->
+                    @endforeach
+                    <!--begin::Col-->
                         <div class="col-md-6 col-lg-4 col-xl-3">
                             <!--begin::Card-->
                             <div
                                 class="card h-100 flex-center bg-light-primary border-primary border border-dashed p-8">
                                 <!--begin::Image-->
-                                <img src="assets/media/svg/files/upload.svg class=" alt=""/>
+                                <img src="{{ asset('assets/media/svg/files/upload.svg') }}" class="" alt=""/>
                                 <!--end::Image-->
                                 <!--begin::Link-->
-                                <a href="#" class="text-hover-primary fs-5 fw-bolder mb-2">File Upload</a>
+                                <a href="#" class="text-hover-primary fs-5 fw-bolder mb-2">Create New Folder</a>
                                 <!--end::Link-->
-                                <!--begin::Description-->
-                                <div class="fs-7 fw-bold text-gray-400">Drag and drop files here</div>
-                                <!--end::Description-->
                             </div>
                             <!--end::Card-->
                         </div>
@@ -427,7 +264,7 @@
                 </div>
                 <!--end::Container-->
             </div>
-        @endif
+    @endif
     <!--end::Post-->
 
     </div>
