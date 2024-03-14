@@ -31,8 +31,6 @@ class FolderController extends Controller
 
     public function store(Request $request)
     {
-//        $slugger = new AsciiSlugger();
-//        $slug = $slugger->slug('Your String Here');
         $folder = Folder::create([
             'name' => $request->name,
             'slug' => Str::slug($request->name),
@@ -40,5 +38,10 @@ class FolderController extends Controller
             'folder_type' => 'free',
             'folder_limit' => 20,
         ]);
+    }
+
+    public function folderImage()
+    {
+        return view('admin.folder.folder_images.index');
     }
 }

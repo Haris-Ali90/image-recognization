@@ -223,10 +223,10 @@
                                     <!--begin::Card body-->
                                     <div class="card-body d-flex justify-content-center text-center flex-column p-8">
                                         <!--begin::Name-->
-                                        <a href="#" class="text-gray-800 text-hover-primary d-flex flex-column">
+                                        <a href="{{ route('admin.folder.images.index') }}" class="text-gray-800 text-hover-primary d-flex flex-column">
                                             <!--begin::Image-->
-                                            <div class="symbol symbol-60px mb-5">
-                                                <img src="{{ asset('assets/media/svg/files/pdf.svg') }}" alt=""/>
+                                            <div class="symbol symbol-75px mb-5">
+                                                <img src="{{ asset('assets/media/svg/files/folder-document.svg') }}" alt="" />
                                             </div>
                                             <!--end::Image-->
                                             <!--begin::Title-->
@@ -235,7 +235,7 @@
                                         </a>
                                         <!--end::Name-->
                                         <!--begin::Description-->
-                                        <div class="fs-7 fw-bold text-gray-400">3 days ago</div>
+                                        <div class="fs-7 fw-bold text-gray-400">7 files</div>
                                         <!--end::Description-->
                                     </div>
                                     <!--end::Card body-->
@@ -244,6 +244,7 @@
                             </div>
                             <!--end::Col-->
                     @endforeach
+
                     <!--begin::Col-->
                         <div class="col-md-6 col-lg-4 col-xl-3">
                             <!--begin::Card-->
