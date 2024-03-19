@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFoldersTable extends Migration
+class CreateFolderImagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,10 @@ class CreateFoldersTable extends Migration
      */
     public function up()
     {
-        Schema::create('folders', function (Blueprint $table) {
+        Schema::create('folder_images', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('slug');
-            $table->string('link');
-            $table->string('folder_type');
-            $table->string('folder_limit');
-            $table->string('due_date');
+            $table->integer('folder_id');
+            $table->string('path');
             $table->timestamps();
         });
     }
@@ -32,6 +28,6 @@ class CreateFoldersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('folders');
+        Schema::dropIfExists('folder_images');
     }
 }
