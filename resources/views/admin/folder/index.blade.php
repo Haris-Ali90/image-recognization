@@ -57,123 +57,7 @@
                         <!--end::Card body-->
                     </div>
                     <!--end::Card-->
-                    <!--begin::Modal - Share & Earn-->
-                    <div class="modal fade" id="kt_modal_share_earn" tabindex="-1" aria-hidden="true">
-                        <!--begin::Modal dialog-->
-                        <div class="modal-dialog modal-dialog-centered mw-800px">
-                            <!--begin::Modal content-->
-                            <div class="modal-content">
-                                <!--begin::Modal header-->
-                                <div class="modal-header pb-0 border-0 justify-content-end">
-                                    <!--begin::Close-->
-                                    <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
-                                        <!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
-                                        <span class="svg-icon svg-icon-1">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                             viewBox="0 0 24 24" fill="none">
-                                            <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1"
-                                                  transform="rotate(-45 6 17.3137)" fill="black"/>
-                                            <rect x="7.41422" y="6" width="16" height="2" rx="1"
-                                                  transform="rotate(45 7.41422 6)" fill="black"/>
-                                        </svg>
-                                    </span>
-                                        <!--end::Svg Icon-->
-                                    </div>
-                                    <!--end::Close-->
-                                </div>
-                                <!--begin::Modal header-->
-                                <!--begin::Modal body-->
-                                <div class="modal-body scroll-y pt-0 pb-15">
-                                    <!--begin::Wrapper-->
-                                    <div class="mw-lg-600px mx-auto">
-                                        <!--begin::Heading-->
-                                        <div class="mb-13 text-center">
-                                            <!--begin::Title-->
-                                            <h1 class="mb-3">Folder</h1>
-                                            <!--end::Title-->
-                                            <!--begin::Description-->
-                                            <div class="text-muted fw-bold fs-5">This folder is used for image uploading
-                                                and
-                                                downloading etc..
-                                            </div>
-                                            <!--end::Description-->
-                                        </div>
-                                        <!--end::Heading-->
 
-                                        <!--begin::form-->
-                                        <form id="folder-form" class="w-100 position-relative mb-3"
-                                              autocomplete="off">
-                                            <!--begin::Input group-->
-                                            <div class="mb-10">
-                                                <!--begin::Title-->
-                                                <!--end::Title-->
-                                                <div class="fv-row mb-10 fv-plugins-icon-container">
-                                                    <!--begin::Label-->
-                                                    <label class="d-flex align-items-center fs-5 fw-bold mb-2">
-                                                        <span class="required">Folder Name</span>
-                                                        <i class="fas fa-exclamation-circle ms-2 fs-7"
-                                                           data-bs-toggle="tooltip"
-                                                           title=""
-                                                           data-bs-original-title="Specify your unique folder name"
-                                                           aria-label="Specify your unique folder name"></i>
-                                                    </label>
-                                                    <!--end::Label-->
-                                                    <!--begin::Input-->
-                                                    <input type="text"
-                                                           class="form-control form-control-lg form-control-solid"
-                                                           name="name" placeholder="" value="">
-                                                    <!--end::Input-->
-                                                    <div class="fv-plugins-message-container invalid-feedback"></div>
-                                                </div>
-                                                <!--begin::Title-->
-                                                <label class="d-flex align-items-center fs-5 fw-bold mb-2">
-                                                    <span class="required">Shareable Link</span>
-                                                    <i class="fas fa-exclamation-circle ms-2 fs-7"
-                                                       data-bs-toggle="tooltip"
-                                                       title="" data-bs-original-title="Its auto generated link"
-                                                       aria-label="Specify your unique app name"></i>
-                                                </label>
-                                                <div class="d-flex">
-
-                                                    <input id="kt_share_earn_link_input" type="text"
-                                                           class="form-control form-control-solid me-3 flex-grow-1"
-                                                           name="link" readonly
-                                                           value="">
-                                                    <button id="kt_share_earn_link_copy_button"
-                                                            class="btn btn-light fw-bolder flex-shrink-0"
-                                                            type="button"
-                                                            data-clipboard-target="#kt_share_earn_link_input">Copy Link
-                                                    </button>
-                                                </div>
-                                                <!--end::Title-->
-                                            </div>
-                                            <!--end::Input group-->
-                                            <!--begin::Actions-->
-                                            <div class="d-flex flex-stack pt-10">
-                                                <!--begin::Wrapper-->
-                                                <div>
-                                                    <button type="button" class="btn btn-lg btn-primary d-inline-block"
-                                                            id="myButton">Submit
-                                                    </button>
-
-                                                </div>
-                                                <!--end::Wrapper-->
-                                            </div>
-                                            <!--end::Actions-->
-                                        </form>
-                                        <!--end::form-->
-
-
-                                    </div>
-                                    <!--end::Wrapper-->
-                                </div>
-                                <!--end::Modal body-->
-                            </div>
-                            <!--end::Modal content-->
-                        </div>
-                        <!--end::Modal dialog-->
-                    </div>
-                    <!--end::Modal - Share & Earn-->
                 </div>
                 <!--end::Container-->
             </div>
@@ -223,10 +107,12 @@
                                     <!--begin::Card body-->
                                     <div class="card-body d-flex justify-content-center text-center flex-column p-8">
                                         <!--begin::Name-->
-                                        <a href="{{ route('admin.folder.images.index') }}" class="text-gray-800 text-hover-primary d-flex flex-column">
+                                        <a href="{{ route('admin.folder.images.index', $folder) }}"
+                                           class="text-gray-800 text-hover-primary d-flex flex-column">
                                             <!--begin::Image-->
                                             <div class="symbol symbol-75px mb-5">
-                                                <img src="{{ asset('assets/media/svg/files/folder-document.svg') }}" alt="" />
+                                                <img src="{{ asset('assets/media/svg/files/folder-document.svg') }}"
+                                                     alt=""/>
                                             </div>
                                             <!--end::Image-->
                                             <!--begin::Title-->
@@ -248,15 +134,13 @@
                     <!--begin::Col-->
                         <div class="col-md-6 col-lg-4 col-xl-3">
                             <!--begin::Card-->
-                            <div
-                                class="card h-100 flex-center bg-light-primary border-primary border border-dashed p-8">
-                                <!--begin::Image-->
-                                <img src="{{ asset('assets/media/svg/files/upload.svg') }}" class="" alt=""/>
-                                <!--end::Image-->
-                                <!--begin::Link-->
-                                <a href="#" class="text-hover-primary fs-5 fw-bolder mb-2">Create New Folder</a>
-                                <!--end::Link-->
-                            </div>
+                            <a href="#" class="text-hover-primary fs-5 fw-bolder mb-2" data-bs-toggle="modal"
+                               data-bs-target="#kt_modal_share_earn">
+                                <div class="card h-100 flex-center bg-light-primary border-primary border border-dashed p-8">
+                                    <img src="{{ asset('assets/media/svg/files/upload.svg') }}" class="" alt=""/>
+                                    Create New Folder
+                                </div>
+                            </a>
                             <!--end::Card-->
                         </div>
                         <!--end::Col-->
@@ -267,7 +151,123 @@
             </div>
     @endif
     <!--end::Post-->
+        <!--begin::Modal - Share & Earn-->
+        <div class="modal fade" id="kt_modal_share_earn" tabindex="-1" aria-hidden="true">
+            <!--begin::Modal dialog-->
+            <div class="modal-dialog modal-dialog-centered mw-800px">
+                <!--begin::Modal content-->
+                <div class="modal-content">
+                    <!--begin::Modal header-->
+                    <div class="modal-header pb-0 border-0 justify-content-end">
+                        <!--begin::Close-->
+                        <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
+                            <!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
+                            <span class="svg-icon svg-icon-1">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                             viewBox="0 0 24 24" fill="none">
+                                            <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1"
+                                                  transform="rotate(-45 6 17.3137)" fill="black"/>
+                                            <rect x="7.41422" y="6" width="16" height="2" rx="1"
+                                                  transform="rotate(45 7.41422 6)" fill="black"/>
+                                        </svg>
+                                    </span>
+                            <!--end::Svg Icon-->
+                        </div>
+                        <!--end::Close-->
+                    </div>
+                    <!--begin::Modal header-->
+                    <!--begin::Modal body-->
+                    <div class="modal-body scroll-y pt-0 pb-15">
+                        <!--begin::Wrapper-->
+                        <div class="mw-lg-600px mx-auto">
+                            <!--begin::Heading-->
+                            <div class="mb-13 text-center">
+                                <!--begin::Title-->
+                                <h1 class="mb-3">Folder</h1>
+                                <!--end::Title-->
+                                <!--begin::Description-->
+                                <div class="text-muted fw-bold fs-5">This folder is used for image uploading
+                                    and
+                                    downloading etc..
+                                </div>
+                                <!--end::Description-->
+                            </div>
+                            <!--end::Heading-->
 
+                            <!--begin::form-->
+                            <form id="folder-form" class="w-100 position-relative mb-3"
+                                  autocomplete="off">
+                                <!--begin::Input group-->
+                                <div class="mb-10">
+                                    <!--begin::Title-->
+                                    <!--end::Title-->
+                                    <div class="fv-row mb-10 fv-plugins-icon-container">
+                                        <!--begin::Label-->
+                                        <label class="d-flex align-items-center fs-5 fw-bold mb-2">
+                                            <span class="required">Folder Name</span>
+                                            <i class="fas fa-exclamation-circle ms-2 fs-7"
+                                               data-bs-toggle="tooltip"
+                                               title=""
+                                               data-bs-original-title="Specify your unique folder name"
+                                               aria-label="Specify your unique folder name"></i>
+                                        </label>
+                                        <!--end::Label-->
+                                        <!--begin::Input-->
+                                        <input type="text"
+                                               class="form-control form-control-lg form-control-solid"
+                                               name="name" placeholder="" value="">
+                                        <!--end::Input-->
+                                        <div class="fv-plugins-message-container invalid-feedback"></div>
+                                    </div>
+                                    <!--begin::Title-->
+                                    <label class="d-flex align-items-center fs-5 fw-bold mb-2">
+                                        <span class="required">Shareable Link</span>
+                                        <i class="fas fa-exclamation-circle ms-2 fs-7"
+                                           data-bs-toggle="tooltip"
+                                           title="" data-bs-original-title="Its auto generated link"
+                                           aria-label="Specify your unique app name"></i>
+                                    </label>
+                                    <div class="d-flex">
+
+                                        <input id="kt_share_earn_link_input" type="text"
+                                               class="form-control form-control-solid me-3 flex-grow-1"
+                                               name="link" readonly
+                                               value="">
+                                        <button id="kt_share_earn_link_copy_button"
+                                                class="btn btn-light fw-bolder flex-shrink-0"
+                                                type="button"
+                                                data-clipboard-target="#kt_share_earn_link_input">Copy Link
+                                        </button>
+                                    </div>
+                                    <!--end::Title-->
+                                </div>
+                                <!--end::Input group-->
+                                <!--begin::Actions-->
+                                <div class="d-flex flex-stack pt-10">
+                                    <!--begin::Wrapper-->
+                                    <div>
+                                        <button type="button" class="btn btn-lg btn-primary d-inline-block"
+                                                id="myButton">Submit
+                                        </button>
+
+                                    </div>
+                                    <!--end::Wrapper-->
+                                </div>
+                                <!--end::Actions-->
+                            </form>
+                            <!--end::form-->
+
+
+                        </div>
+                        <!--end::Wrapper-->
+                    </div>
+                    <!--end::Modal body-->
+                </div>
+                <!--end::Modal content-->
+            </div>
+            <!--end::Modal dialog-->
+        </div>
+        <!--end::Modal - Share & Earn-->
     </div>
 
 

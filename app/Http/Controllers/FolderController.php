@@ -40,8 +40,8 @@ class FolderController extends Controller
         ]);
     }
 
-    public function folderImage()
+    public function folderImage(Folder $folder)
     {
-        return view('admin.folder.folder_images.index');
+        return view('admin.folder.folder_images.index', compact('folder'));
     }
 }
