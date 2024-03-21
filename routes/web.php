@@ -23,3 +23,4 @@ Route::get('admin/dashboard', [App\Http\Controllers\HomeController::class, 'inde
 Route::get('admin/folder', [App\Http\Controllers\FolderController::class, 'index'])->name('admin.folder.index');
 Route::post('admin/folder/store', [App\Http\Controllers\FolderController::class, 'store'])->name('admin.folder.store');
 Route::get('admin/folder/images/{folder}', [App\Http\Controllers\FolderController::class, 'folderImage'])->name('admin.folder.images.index');
+Route::post('admin/folder/images/store', [App\Http\Controllers\FolderController::class, 'submitFolderImages'])->name('admin.folder.images.store');

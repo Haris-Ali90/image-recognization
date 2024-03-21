@@ -2246,7 +2246,7 @@
                                                class="d-flex text-dark text-hover-primary align-items-center mb-5">
                                                 <!--begin::Symbol-->
                                                 <div class="symbol symbol-40px me-4">
-                                                    <img src="assets/media/avatars/150-3.jpg" alt=""/>
+                                                    <img src="{{asset('assets/media/avatars/150-3.jpg')}}" alt=""/>
                                                 </div>
                                                 <!--end::Symbol-->
                                                 <!--begin::Title-->

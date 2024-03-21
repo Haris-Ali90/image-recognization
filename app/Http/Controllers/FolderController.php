@@ -7,6 +7,7 @@ use App\Models\FolderImage;
 use DateInterval;
 use DateTime;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class FolderController extends Controller
@@ -52,5 +53,27 @@ class FolderController extends Controller
     {
         $images = FolderImage::where('folder_id', $folder->id)->get();
         return view('admin.folder.folder_images.index', compact('folder', 'images'));
+    }
+
+    public function submitFolderImages(Request $request)
+    {
+        $request->validate([
+            'file' => 'required|file|max:10240', // Max size: 10 MB
+        ]);
+
+        // Store the uploaded file
+        if ($request->file('file')->isValid()) {
+            // Store the file in the storage/app/public directory
+            $path = $request->file('file')->store('uploads', 'public');
+            // You can also use the putFile method to store the file
+//             $path = Storage::putFile('uploads', $request->file('file'));
+            FolderImage::create([
+                'folder_id' => $request->folder_id,
+                'path' => $path
+            ]);
+        }
+
+        // If the file upload fails
+//        return response()->json(['error' => 'File upload failed'], 500);
     }
 }

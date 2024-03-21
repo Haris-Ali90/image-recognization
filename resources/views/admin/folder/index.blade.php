@@ -98,7 +98,7 @@
                     </div>
                     <!--end::Toolbar-->
                     <!--begin::Row-->
-                    <div class="row g-6 g-xl-9 mb-6 mb-xl-9">
+                    <div class="row g-6 g-xl-9 mb-6 mb-xl-9" id="folder-div">
                     @foreach($folders as $folder)
                         <!--begin::Col-->
                             <div class="col-md-6 col-lg-4 col-xl-3">
@@ -303,9 +303,14 @@
                 },
                 success: function (response) {
                     // Handle the successful responseo
-                    window.location.href = '<?php echo route('admin.folder.index') ?>';
-                    console.log('Form submitted successfully');
-                    console.log('Server response:', response);
+                    Swal.fire({
+                        title: "Good job!",
+                        text: "You have successfully created folder",
+                        icon: "success"
+                    });
+                    $('#folder-div').load(window.location.href + ' #folder-div');
+                    $('#kt_modal_share_earn').modal('hide');
+
                 },
                 error: function (error) {
                     // Handle errors
